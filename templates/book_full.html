@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+<center>
+    <br>
+    <hr>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title">{{book_id.title}}</h3>
+    <img src="{{book_id.image.url}}" alt="" width="200" height="300">
+    <h6 class="card-subtitle mb-2 text-muted">Количество страниц: {{book_id.quantity}}</h6>
+    <h5 class="card-subtitle mb-2 text-muted">Автор: {{book_id.author}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Цена: {{book_id.price}} сом</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Масса: {{book_id.mass}} грамм</h6>
+    <p class="card-text">{{book_id.description}}</p>
+    <p class="card-link">Жанр: {{book_id.genre}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Возрастное ограничение: {{book_id.age_limit}}+</h6>
+    <a href="{{book_id.link}}">Кликни для перехода в магазин</a>
+    <p>Дата публикации: {{book_id.created_dates}}</p>
+    <p>Дата обновления: {{book_id.updated_dates}}</p>
+  </div>
+</div>
+    <br>
+    <hr>
+</center>
+
+{% include 'footer.html' %}
