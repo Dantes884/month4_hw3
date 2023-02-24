@@ -2,6 +2,16 @@ from django.db import models
 
 class Book(models.Model):
 
+
+    DEFAULT_CHOICES = (
+        ('5', '5'),
+        ('4', '4'),
+        ('3', '3'),
+        ('2', '2'),
+        ('1', '1'),
+    )
+
+
     GENRE = (
         ('HORROR', 'HORROR'),
         ('COMEDY', 'COMEDY'),
@@ -23,9 +33,16 @@ class Book(models.Model):
     price = models.PositiveIntegerField('Цена')
     mass = models.PositiveIntegerField('Масса книги в граммах')
     age_limit = models.PositiveIntegerField('Возрастное ограничение')
+    rating = models.CharField('Рейтинг', max_length=100, choices=DEFAULT_CHOICES, null=True)
     created_dates = models.DateTimeField(auto_now_add=True, null=True)
     updated_dates = models.DateTimeField(auto_now=True, null=True)
 
 
     def __str__(self):
         return self.title
+
+
+class Vote(models.Model):
+    value = models.SmallIntegerField()
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    voted_on = models.DateTimeField(auto_now=True)

@@ -14,6 +14,9 @@
     <p class="card-link">Жанр: {{book_id.genre}}</p>
     <h6 class="card-subtitle mb-2 text-muted">Возрастное ограничение: {{book_id.age_limit}}+</h6>
     <a href="{{book_id.link}}">Кликни для перехода в магазин</a>
+    <h6 class="card-subtitle mb-2 text-muted">Рейтинг: {{book_id.rating}} звёзды</h6>
+    <button><a href="/book/{{book_id.id}}/change/">Изменить книгу</a></button>
+    <button><a href="/book/{{book_id.id}}/delete/">Удалить книгу</a></button>
     <p>Дата публикации: {{book_id.created_dates}}</p>
     <p>Дата обновления: {{book_id.updated_dates}}</p>
   </div>
